@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-image: url('https://hips.hearstapps.com/hmg-prod/images/full-moon-calendar-yellow-moon-with-clouds-64398e1192e0c.jpg?crop=1xw:0.84375xh;center,top');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+      }   
+      .logo {
+        max-width: 100px;
+      }
+      .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 400px;
+        border-radius: 8px;
+        padding: 20px 40px;
+        box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+      }
+      .inputContainer {
+        position: relative;
+        height: 45px;
+        width: 90%;
+        margin-bottom: 17px;
+      }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNcivn_8aqE_GBPY8Vr_nP8xH2SrZeGb-cw&usqp=CAU"  type = "image/x-icon">
+    <title>Sign Up Page</title>
+</head>
+<body>
+<header class="head">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNcivn_8aqE_GBPY8Vr_nP8xH2SrZeGb-cw&usqp=CAU" style="width:200px;height:180px;" type = "image/x-icon">
+</header>
+
+<div class="container">
+    <div class="center">
+        <h1>Register</h1>
+        <form method="POST" action="">
+            <div class="txt_field">
+                <input type="text" name="name" required>
+                <span></span>
+                <label>Name and Surname</label>
+            </div>
+            <div class="txt_field">
+                <input type="email" name="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="phone" name="phone" required>
+                <span></span>
+                <label>Phone</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="cpassword" required>
+                <span></span>
+                <label>Confirm Password</label>
+            </div>
+            <input name="submit" type="Submit" value="Sign Up">
+            <div class="signup_link">
+                Have an Account ? <a href="loginForm.php">Login Here</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<script>
+    // Validate the name field
+    function validateName() {
+      var name = document.getElementById("name").value;
+      if (name == "") {
+        alert("Please enter your name.");
+        return false;
+      }
+      return true;
+    }
+    
+    // Validate the surname field
+    function validateSurname() {
+      var surname = document.getElementById("surname").value;
+      if (surname == "") {
+        alert("Please enter your surname.");
+        return false;
+      }
+      return true;
+    }
+    
+    // Validate the email field
+    function validateEmail() {
+      var email = document.getElementById("email").value;
+      var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (!re.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+      return true;
+    }
+    
+    // Validate the phone number field
+    function validatePhone() {
+      var phone = document.getElementById("phone").value;
+      var re = /^\d{10}$/;
+      if (!re.test(phone)) {
+        alert("Please enter a valid phone number.");
+        return false;
+      }
+      return true;
+    }
+    
+    // Submit the form if all fields are valid
+    function submitForm() {
+      if (validateName() && validateSurname() && validateEmail() && validatePhone()) {
+        document.getElementById("form").submit();
+      }
+    }
+</script>
+</body>
+</html>
